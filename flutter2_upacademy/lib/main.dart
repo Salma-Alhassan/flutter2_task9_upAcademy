@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -34,42 +36,46 @@ class MyApp extends StatelessWidget {
         body: Padding(
           // key: ,
           padding: const EdgeInsets.all(18.0),
-          child: Column(children: [
-            const TextField(
-              decoration: InputDecoration(
-                hintText: 'Enter your firstname',
-                // labelText: 'Enter your firstname',
-                border: UnderlineInputBorder(),
+          child: SingleChildScrollView(
+              child: Column(
+            children: [
+              const TextField(
+                decoration: InputDecoration(
+                  hintText: 'Enter your firstname',
+                  // labelText: 'Enter your firstname',
+                  border: UnderlineInputBorder(),
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const TextField(
-              decoration: InputDecoration(
-                hintText: 'Enter your password',
-                border: UnderlineInputBorder(),
+              const SizedBox(
+                height: 20,
               ),
-            ),
-            const Spacer(),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text("login"),
-              style: ElevatedButton.styleFrom(
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero),
-                  backgroundColor: const Color(0xFF3E494A),
-                  foregroundColor: Colors.white,
-                  fixedSize: const Size(380, 50)),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                "Forgot Password?",
-                style: TextStyle(color: Colors.blue),
+              const TextField(
+                decoration: InputDecoration(
+                  hintText: 'Enter your password',
+                  labelText: "password",
+                  border: UnderlineInputBorder(),
+                ),
               ),
-            )
-          ]),
+              const Spacer(),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text("login"),
+                style: ElevatedButton.styleFrom(
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.zero),
+                    backgroundColor: const Color(0xFF3E494A),
+                    foregroundColor: Colors.white,
+                    fixedSize: const Size(380, 50)),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  "Forgot Password?",
+                  style: TextStyle(color: Colors.blue),
+                ),
+              )
+            ],
+          )),
         ),
       ),
     );
